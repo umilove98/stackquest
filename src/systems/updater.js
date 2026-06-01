@@ -30,7 +30,9 @@ async function fetchLatest() {
   if (!res.ok) throw new Error(`릴리스 조회 실패 (HTTP ${res.status})`);
   const j = await res.json();
   const assets = j.assets || [];
-  const exeAsset = assets.find((a) => /win.*\.exe$/i.test(a.name)) || assets.find((a) => a.name.endsWith('.exe'));
+  const exeAsset = assets.find((a) => a.name.toLowerCase() === 'stackquest.exe')
+    || assets.find((a) => /win.*\.exe$/i.test(a.name))
+    || assets.find((a) => a.name.endsWith('.exe'));
   const shaAsset = exeAsset && assets.find((a) => a.name === `${exeAsset.name}.sha256`);
   return {
     version: (j.tag_name || '').replace(/^v/, ''),
@@ -46,36 +48,38 @@ async function downloadBuffer(url) {
   return Buffer.from(await res.arrayBuffer());
 }
 
-export async function runUpdate() {
-  console.log(`STACK QUEST 업데이트 — 현재 v${VERSION}`);
-  if (!isConfigured()) {
-    console.log('릴리스 소스가 설정되지 않았습니다. src/data/version.js 의 REPO를 "owner/repo"로 설정하세요.');
-    return;
-  }
+// non-blocking status check (swallows network errors). used by --update and the
+// in-game lobby. returns { configured, isExe, current, latest, hasUpdate, info }.
+export async function checkUpdate() {
   const exe = selfExe();
-  if (!exe) {
-    console.log('개발 모드(node/bun 실행)입니다. 자체 업데이트는 빌드된 .exe에서만 동작합니다.');
-    console.log('코드 업데이트: `git pull` 후 `npm run build:win`.');
-    return;
-  }
-  let info;
-  try { info = await fetchLatest(); } catch (e) { console.log('업데이트 확인 실패:', e.message); return; }
-  if (!info.version) { console.log('아직 게시된 릴리스가 없습니다.'); return; }
-  if (cmpVer(info.version, VERSION) <= 0) { console.log(`이미 최신 버전입니다 (v${VERSION}).`); return; }
-  if (!info.exeUrl) { console.log(`v${info.version} 릴리스에 Windows exe 자산이 없습니다.`); return; }
+  const out = { configured: isConfigured(), isExe: !!exe, current: VERSION, latest: null, hasUpdate: false, info: null };
+  if (!out.configured || !exe) return out;
+  try {
+    const info = await fetchLatest();
+    out.latest = info.version;
+    out.info = info;
+    out.hasUpdate = !!(info.version && info.exeUrl && cmpVer(info.version, VERSION) > 0);
+  } catch { /* offline / API error → just report no update */ }
+  return out;
+}
 
-  console.log(`새 버전 v${info.version} 발견 — 다운로드 중... (${info.exeName})`);
+// download + verify + self-swap. `log(msg)` reports progress (console or screen).
+// returns { ok, version, error }.
+export async function performUpdate(info, log = () => {}) {
+  const exe = selfExe();
+  if (!exe) return { ok: false, error: '개발 모드' };
+  if (!info || !info.exeUrl) return { ok: false, error: '릴리스 자산 없음' };
+  log(`v${info.version} 다운로드 중...`);
   let buf;
-  try { buf = await downloadBuffer(info.exeUrl); } catch (e) { console.log('다운로드 실패:', e.message); return; }
-
+  try { buf = await downloadBuffer(info.exeUrl); } catch (e) { return { ok: false, error: '다운로드 실패: ' + e.message }; }
   if (info.shaUrl) {
     try {
       const want = (await (await fetch(info.shaUrl, { headers: UA })).text()).trim().split(/\s+/)[0].toLowerCase();
       const got = createHash('sha256').update(buf).digest('hex');
-      if (want && want !== got) { console.log('체크섬 불일치 — 업데이트를 중단합니다(손상/위변조 의심).'); return; }
+      if (want && want !== got) return { ok: false, error: '체크섬 불일치(손상/위변조 의심)' };
     } catch { /* checksum optional */ }
   }
-
+  log('설치 중...');
   const upd = path.join(path.dirname(exe), 'stackquest.update.exe');
   const old = exe + '.old';
   try {
@@ -83,14 +87,30 @@ export async function runUpdate() {
     if (existsSync(old)) { try { unlinkSync(old); } catch {} }
     renameSync(exe, old);   // rename the running exe (allowed on Windows)
     renameSync(upd, exe);   // move the new exe into place
-    console.log(`\n✅ v${info.version} 설치 완료! 게임을 다시 실행하세요.`);
-    console.log('(이전 버전 파일은 다음 실행 때 자동 정리됩니다)');
+    return { ok: true, version: info.version };
   } catch (e) {
-    console.log('파일 교체 실패:', e.message);
     try { if (existsSync(old) && !existsSync(exe)) renameSync(old, exe); } catch {}
     try { if (existsSync(upd)) unlinkSync(upd); } catch {}
-    console.log('수동 설치: 아래에서 새 exe를 받아 덮어쓰세요 —');
-    console.log(`  https://github.com/${REPO}/releases/latest`);
+    return { ok: false, error: '파일 교체 실패: ' + e.message };
+  }
+}
+
+// CLI: `stackquest --update`
+export async function runUpdate() {
+  console.log(`STACK QUEST 업데이트 — 현재 v${VERSION}`);
+  const st = await checkUpdate();
+  if (!st.configured) { console.log('릴리스 소스 미설정 (src/data/version.js 의 REPO).'); return; }
+  if (!st.isExe) { console.log('개발 모드입니다. 빌드된 .exe에서만 자체 업데이트가 동작합니다 (`git pull` 후 `npm run build:win`).'); return; }
+  if (!st.latest) { console.log('릴리스를 찾을 수 없습니다 (오프라인이거나 게시 전).'); return; }
+  if (!st.hasUpdate) { console.log(`이미 최신 버전입니다 (v${VERSION}).`); return; }
+  console.log(`새 버전 v${st.latest} 발견.`);
+  const r = await performUpdate(st.info, (m) => console.log('•', m));
+  if (r.ok) {
+    console.log(`\n✅ v${r.version} 설치 완료! 게임을 다시 실행하세요.`);
+    console.log('(이전 버전 파일은 다음 실행 때 자동 정리됩니다)');
+  } else {
+    console.log('업데이트 실패:', r.error);
+    console.log(`수동 설치: https://github.com/${REPO}/releases/latest`);
   }
 }
 

@@ -18,7 +18,7 @@ if (top.version.replace(/^v/, '') !== VERSION) {
 
 const out = 'dist/releases';
 mkdirSync(out, { recursive: true });
-const exeName = `stackquest-${tag}-win-x64.exe`;
+const exeName = 'stackquest.exe'; // stable name so self-update keeps the filename
 const exe = `${out}/${exeName}`;
 
 console.log(`▶ STACK QUEST release ${tag} — ${top.title}`);

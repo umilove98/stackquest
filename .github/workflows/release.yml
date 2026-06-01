@@ -22,18 +22,14 @@ jobs:
       - name: Selftest gate
         run: node game.js --selftest
 
-      - name: Build Windows exe
+      - name: Build Windows exe (stable filename so self-update keeps the name)
         run: |
           mkdir -p dist
-          bun build ./game.js --compile --target=bun-windows-x64 \
-            --outfile "dist/stackquest-${GITHUB_REF_NAME}-win-x64.exe"
+          bun build ./game.js --compile --target=bun-windows-x64 --outfile dist/stackquest.exe
 
       - name: Checksum + release notes
         run: |
-          cd dist
-          sha256sum "stackquest-${GITHUB_REF_NAME}-win-x64.exe" \
-            > "stackquest-${GITHUB_REF_NAME}-win-x64.exe.sha256"
-          cd ..
+          cd dist && sha256sum stackquest.exe > stackquest.exe.sha256 && cd ..
           node tools/notes.mjs "${GITHUB_REF_NAME}"
 
       - name: Publish GitHub Release
@@ -41,5 +37,5 @@ jobs:
         with:
           body_path: NOTES.md
           files: |
-            dist/stackquest-${{ github.ref_name }}-win-x64.exe
-            dist/stackquest-${{ github.ref_name }}-win-x64.exe.sha256
+            dist/stackquest.exe
+            dist/stackquest.exe.sha256

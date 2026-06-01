@@ -13,7 +13,8 @@ import { CONFIG, genomeVerdict } from './data/config.js';
 import { runOverworld } from './systems/overworld.js';
 import { pullStarter, reveal } from './systems/gacha.js';
 import { openPatchNotes } from './systems/patchnotes.js';
-import { panel, menu, say, drawCreature, rarityTag, RARITY_GLYPH, classTag, genomeBar, toneColor } from './ui.js';
+import { panel, menu, say, confirm, drawCreature, rarityTag, RARITY_GLYPH, classTag, genomeBar, toneColor } from './ui.js';
+import { checkUpdate, performUpdate } from './systems/updater.js';
 import { rarityKo, verdictKo, classKo } from './data/i18n.js';
 
 function spriteDims(id) {
@@ -30,6 +31,8 @@ const BANNER = 'STACK QUEST';
 
 async function titleScreen(ctx) {
   const { screen, input } = ctx;
+  // kick off a (non-blocking) update check; result is read when building the menu
+  const updPromise = checkUpdate().catch(() => ({ hasUpdate: false }));
   const decoIds = ['GREP', 'GIT', 'DOCKER', 'GPT4', 'MIDJOURNEY', 'CLAUDE_OPUS'];
   const positions = [];
   for (let i = 0; i < decoIds.length; i++) {
@@ -63,24 +66,52 @@ async function titleScreen(ctx) {
     phase += 6;
     if (input.queue.length) { const k = input.next ? await input.next() : 'enter'; if (k === 'esc' || k === 'q') return 'quit'; break; }
   }
-  // menu
-  const items = [
-    { label: '이어하기', disabled: !hasSave(), hint: '저장된 게임을 불러온다' },
-    { label: '새 게임', hint: '처음부터 시작 (저장 덮어쓰기)' },
-    { label: '패치노트', hint: '업데이트 변경 내역을 본다' },
-    { label: '종료', hint: '터미널로 나간다' },
-  ];
+  // read the update check (bounded wait so the menu never hangs on a slow network)
+  let upd = { hasUpdate: false };
+  try { upd = await Promise.race([updPromise, sleep(1500).then(() => ({ hasUpdate: false }))]); } catch { /* ignore */ }
+
   const drawBase = () => {
     screen.clear([10, 11, 17]);
     const big = BANNER.split('').join(' ');
     rainbowText(screen, Math.floor((screen.w - big.length) / 2), 4, big, phase, { spread: 26, light: 0.66 });
     screen.textCenter(6, '디버깅 가챠 RPG', PAL.inkDim, [10, 11, 17]);
+    if (upd && upd.isExe && upd.hasUpdate) screen.textCenter(8, `★ 새 버전 v${upd.latest} 사용 가능`, PAL.gold, [10, 11, 17]);
   };
+
+  // menu (id-based so the optional update item doesn't shift indices)
+  const items = [];
+  if (upd && upd.isExe && upd.hasUpdate) items.push({ id: 'update', label: `새 버전 v${upd.latest} 설치`, color: PAL.gold, hint: '최신 버전으로 자동 업데이트' });
+  items.push({ id: 'continue', label: '이어하기', disabled: !hasSave(), hint: '저장된 게임을 불러온다' });
+  items.push({ id: 'new', label: '새 게임', hint: '처음부터 시작 (저장 덮어쓰기)' });
+  items.push({ id: 'notes', label: '패치노트', hint: '업데이트 변경 내역을 본다' });
+  items.push({ id: 'quit', label: '종료', hint: '터미널로 나간다' });
+
   for (;;) {
-    const pick = await menu(screen, input, drawBase, items, { x: Math.floor(screen.w / 2) - 8, y: 10, width: 24, allowCancel: false, bg: [10, 11, 17] });
-    if (pick === 2) { await openPatchNotes(ctx); continue; } // view notes, then back to menu
-    return pick === 0 ? 'continue' : pick === 1 ? 'new' : 'quit';
+    const pick = await menu(screen, input, drawBase, items, { x: Math.floor(screen.w / 2) - 8, y: 10, width: 28, allowCancel: false, bg: [10, 11, 17] });
+    const id = items[pick].id;
+    if (id === 'update') { await lobbyUpdate(ctx, upd.info, drawBase); continue; } // exits on success; returns here on cancel/fail
+    if (id === 'notes') { await openPatchNotes(ctx); continue; }
+    return id === 'continue' ? 'continue' : id === 'new' ? 'new' : 'quit';
   }
+}
+
+// in-lobby self-update: same effect as `--update`, with on-screen progress.
+async function lobbyUpdate(ctx, info, drawBase) {
+  const { screen, input } = ctx;
+  const yes = await confirm(screen, input, drawBase, `새 버전 v${info.version}을(를) 설치할까요? (설치 후 재실행 필요)`, { default: true });
+  if (!yes) return false;
+  const msg = (m) => { drawBase(); screen.textCenter(13, m, PAL.accent, [10, 11, 17]); screen.flush(); };
+  msg('다운로드 중... (약 100MB · 잠시만요)');
+  const r = await performUpdate(info, msg);
+  if (r.ok) {
+    msg(`✅ v${r.version} 설치 완료! 게임을 다시 실행하세요.`);
+    await sleep(1600);
+    exitFull();
+    process.exit(0);
+  }
+  msg('업데이트 실패: ' + r.error);
+  await sleep(1900);
+  return false;
 }
 
 // decision screen shown under the keep/reroll menu after a starting pull

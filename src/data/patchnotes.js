@@ -3,6 +3,15 @@
 
 export const PATCH_NOTES = [
   {
+    version: 'v0.6.0',
+    title: '인게임 업데이트',
+    changes: [
+      '타이틀 화면에서 새 버전을 자동 확인 — 있으면 「새 버전 v… 설치」 버튼이 뜬다.',
+      '  · 터미널 없이 메뉴에서 바로 다운로드·설치(= --update와 동일).',
+      '업데이트 후에도 파일 이름이 어긋나지 않도록 릴리스 파일명을 stackquest.exe로 통일.',
+    ],
+  },
+  {
     version: 'v0.5.0',
     title: '자체 업데이트',
     changes: [
