@@ -1,0 +1,35 @@
+{
+  "rarityOdds": {
+    "COMMON": 0.58,
+    "UNCOMMON": 0.26,
+    "RARE": 0.105,
+    "EPIC": 0.043,
+    "LEGENDARY": 0.012
+  },
+  "pity": {
+    "softRareEvery": 8,
+    "hardLegendaryAt": 35
+  },
+  "shinyOdds": 0.05,
+  "ivMax": 31,
+  "gachaCostTokens": 100,
+  "tenPullCostTokens": 900,
+  "xpCurveNote": "Per-creature level cap 50 for a short run. XP for level L->L+1 = round(8 * L^1.45) cycles (L1->2=8, L5->6~83, L20->21~563). Battle win awards enemyLevel * 6 * rarityMult (COMMON 1.0 .. LEGENDARY 2.2) with a +50% \"clean commit\" no-faint bonus.",
+  "catchFormulaNote": "Catch (\"patch\") chance = clamp( catchRate * (1 - targetHP%/100)^1.15 * statusMult * ballMult, 0.02, 0.95 ). catchRate is species base patchability (LEGENDARY ~0.10 .. COMMON ~0.85); statusMult: frozen/asleep 2.0, glitched/poisoned 1.5, none 1.0; ballMult by patch-tool tier: StackTrace.patch 1.0, Breakpoint.patch 1.5, Hotfix.patch 2.5. Wild patches inherit the encountered BUG's fixed rarity; gacha pulls roll rarity from rarityOdds. On capture/pull every stat rolls an IV uniformly in [0..ivMax=31]. Genome integrity % = round( sum(IVs) / (6 stats * 31) * 100 ): 186/186 = 100% 'CLEAN BUILD', ~50% 'FLAKY', under 25% 'CORRUPTED HEAP'. Shiny is rolled separately at shinyOdds and only recolors the sprite plus a cosmetic +5% integrity display flair (underlying IVs unchanged).",
+  "revealFrames": [
+    "Frame 1 - CHARGE: terminal dims to PAL.bgDeep; a single white caret '_' blinks dead-center, pulsing brighter each beat as a low 'compiling...' hum line types beneath it.",
+    "Frame 2 - GATHER: thin white sparks (sparkle() chars '.' '+' over a small center region) stream inward toward the caret, which swells into a hot-white pinpoint '*' at full PAL.white.",
+    "Frame 3 - RING IGNITION: a white ring expands outward via gradientBar-style arcs, screen.flush rippling rows; faint text 'rolling rarity...' fades in (fadeInText, PAL.inkDim).",
+    "Frame 4 - FIRST BEAM (green): four light beams shoot from center, lerpColor white -> PAL.rarity.UNCOMMON green; crowd-pleasing low 'at least it's something' tension, beams pulse twice.",
+    "Frame 5 - BEAM CLIMB (blue): beams ramp green -> PAL.rarity.RARE blue, brightening and lengthening; a rising tick-tick-tick of caret glyphs races up the screen edges.",
+    "Frame 6 - FAKEOUT SURGE (purple tease): beams flare suddenly toward PAL.rarity.EPIC purple, the whole frame tints faintly purple (flash() one soft beat) and a gold glint flickers at the tips — the room holds its breath.",
+    "Frame 7 - FAKEOUT SETTLE: the purple/gold glint COLLAPSES back down a step (lerpColor toward the true rarity color over ~6 tween steps), beams stutter and dim — the classic 'aww... wait—' deflation beat.",
+    "Frame 8 - RECHARGE SPIKE: a sharp inhale — beams snap back inward into a single overbright core, color locking to the FINAL rarity hue from PAL.rarity[result], screen shake() 3 frames mag 2.",
+    "Frame 9 - FLARE BURST: full-screen flash() in the locked rarity color (2 blinks, on 45/off 55), a white-hot star bursts at center and rarityText rainbow-shimmers the label e.g. 'EPIC PATCH!'.",
+    "Frame 10 - SHINY CHECK: a separate quiet beat — three slow cyan PAL.shiny sparkles sweep across the sprite silhouette; if shiny, they detonate into a ✦✧ shimmer with a chime ('SHINY VARIANT // alt-palette'); if not, they fizzle to nothing.",
+    "Frame 11 - MATERIALIZE: the creature sprite resolves from silhouette, half-block rows fading up via fadeInText/scaleColor from PAL.inkFaint to full class color, settling with a tiny bounce.",
+    "Frame 12 - GENOME READOUT: an IV panel types in per stat (typeLine), each stat's gradientBar filling 0 -> its IV/31 in the rarity gradient (tween, easeOutCubic), digits ticking up.",
+    "Frame 13 - INTEGRITY VERDICT: the six bars sum into a single 'GENOME INTEGRITY ##%' bar that sweeps fill, color-graded bad->warn->good; a stamped verdict fades in ('CLEAN BUILD' / 'FLAKY' / 'CORRUPTED HEAP').",
+    "Frame 14 - SIGNOFF: gentle ambient sparkle() settles over the card, the rarity-colored frame border draws on with a heavy box, and prompt 'patched to roster — [Enter]' fades in."
+  ]
+}

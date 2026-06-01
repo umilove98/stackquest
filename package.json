@@ -1,0 +1,21 @@
+{
+  "name": "stack-quest",
+  "version": "0.5.0",
+  "private": true,
+  "type": "module",
+  "description": "STACK QUEST - a CLI debug-themed gacha monster RPG with truecolor pixel-art creatures",
+  "bin": { "stackquest": "./game.js" },
+  "scripts": {
+    "start": "node game.js",
+    "play": "node game.js",
+    "selftest": "node game.js --selftest",
+    "demo": "node game.js --demo",
+    "sprites": "node tools/spritesheet.js",
+    "build:win": "bun build ./game.js --compile --target=bun-windows-x64 --outfile dist/stackquest.exe",
+    "build:mac": "bun build ./game.js --compile --target=bun-darwin-arm64 --outfile dist/stackquest-mac",
+    "build:linux": "bun build ./game.js --compile --target=bun-linux-x64 --outfile dist/stackquest-linux",
+    "release": "node tools/release.mjs",
+    "version:print": "node game.js --version"
+  },
+  "engines": { "node": ">=18" }
+}

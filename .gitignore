@@ -1,0 +1,23 @@
+# build artifacts & releases (shipped via GitHub Releases, not the repo)
+dist/
+*.exe
+*.zip
+*.exe.old
+stackquest.update.exe
+# bun --compile intermediate files (can exceed GitHub's 100MB limit)
+*.bun-build
+.*.bun-build
+
+# save files
+savegame.json
+*.savegame.json
+
+# deps / tooling
+node_modules/
+
+# scratch scripts
+_*.mjs
+
+# OS
+Thumbs.db
+.DS_Store

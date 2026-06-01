@@ -1,0 +1,83 @@
+{
+  "width": 40,
+  "height": 18,
+  "tiles": [
+    "########################################",
+    "#S.......~~~~~~~~~................#..B.#",
+    "#........~~~~~~~~~........#########....#",
+    "#........~~~~~~~~~........#tttttt##....#",
+    "#........~~~~~~~~~........#tttttt##....#",
+    "#.........................#tttttt####D##",
+    "#.....................N...#tttttt#.....#",
+    "#.........................###.####.....#",
+    "#...................#..................#",
+    "#######......#......#..................#",
+    "#.H...#......#...................#######",
+    "#............#......#............#.....#",
+    "#.....#.............#............#.....#",
+    "#.....#......#......#................R.#",
+    "#.G...#......#......#............#.....#",
+    "#.....#......#...................#.....#",
+    "#.....#......#......#...N........#.....#",
+    "########################################"
+  ],
+  "legend": {
+    ".": {
+      "name": "Floor (open codepath)",
+      "walkable": true,
+      "kind": "floor"
+    },
+    "#": {
+      "name": "Wall (stack frame)",
+      "walkable": false,
+      "kind": "wall"
+    },
+    "~": {
+      "name": "Memory Pool (water)",
+      "walkable": false,
+      "kind": "water"
+    },
+    "t": {
+      "name": "Tall Grass (legacy code, wild BUGS lurk)",
+      "walkable": true,
+      "kind": "grass"
+    },
+    "S": {
+      "name": "Spawn (main() entrypoint)",
+      "walkable": true,
+      "kind": "spawn"
+    },
+    "G": {
+      "name": "GACHA Terminal (loot-box.exe)",
+      "walkable": true,
+      "kind": "gacha"
+    },
+    "H": {
+      "name": "HEALER (refactor clinic, restores party HP)",
+      "walkable": true,
+      "kind": "healer"
+    },
+    "R": {
+      "name": "REPO/BOX (git stash, manage caught creatures)",
+      "walkable": true,
+      "kind": "repo"
+    },
+    "N": {
+      "name": "NPC (signpost dev, lore)",
+      "walkable": true,
+      "kind": "npc"
+    },
+    "D": {
+      "name": "GATE (sudo door to boss arena)",
+      "walkable": true,
+      "kind": "gate"
+    },
+    "B": {
+      "name": "FINAL BOSS (the Heisenbug)",
+      "walkable": true,
+      "kind": "boss"
+    }
+  },
+  "notes": "Spawn at top-left (S) near the HEALER clinic and the lower-left GACHA terminal; a witty NPC (N) at center points the way. The player crosses open codepaths to grind in the tall-grass legacy zone (t) and bank creatures at the REPO/BOX (R) on the right. A second NPC warns of the gate; once leveled, the player passes the GATE (D) into the walled arena to face the final boss B (the Heisenbug).",
+  "notes2": ""
+}

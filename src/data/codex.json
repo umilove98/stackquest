@@ -1,0 +1,1697 @@
+[
+  {
+    "id": "GREP",
+    "name": "그렙",
+    "classTag": "LOGIC",
+    "rarity": "COMMON",
+    "role": "wild",
+    "base": {
+      "hp": 40,
+      "atk": 48,
+      "def": 34,
+      "spd": 50
+    },
+    "catchRate": 210,
+    "flavor": "텍스트의 강을 훑는 작은 돋보기 정령. 수백만 줄 속에서 네가 찾던 그 한 줄을 기어이 집어 올린다.",
+    "inWild": true,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "정규식 일격",
+        "classTag": "LOGIC",
+        "power": 48,
+        "acc": 90,
+        "effect": null,
+        "desc": "패턴에 딱 들어맞는 급소만 골라 한 줄로 꿰뚫는다."
+      },
+      {
+        "name": "파이프 연결",
+        "classTag": "LOGIC",
+        "power": 42,
+        "acc": 100,
+        "effect": null,
+        "desc": "출력을 다음 명령으로 흘려보내며 끊김 없이 후려친다."
+      },
+      {
+        "name": "재귀 검색",
+        "classTag": "LOGIC",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "하위 폴더까지 -r 옵션으로 샅샅이 뒤져 급소를 노린다."
+      }
+    ],
+    "evolveTo": "COPILOT"
+  },
+  {
+    "id": "PRINTF",
+    "name": "프린트에프",
+    "classTag": "LOGIC",
+    "rarity": "COMMON",
+    "role": "wild",
+    "base": {
+      "hp": 44,
+      "atk": 44,
+      "def": 36,
+      "spd": 46
+    },
+    "catchRate": 212,
+    "flavor": "영원한 디버깅 목발, console.log의 화신. 디버거가 있어도 결국 여기다 한 줄 찍게 되는 수다스러운 말풍선.",
+    "inWild": true,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "여기까지 됨",
+        "classTag": "LOGIC",
+        "power": 45,
+        "acc": 95,
+        "effect": null,
+        "desc": "수상한 지점마다 말풍선을 박으며 상대를 따끔하게 찌른다."
+      },
+      {
+        "name": "변수 토해내기",
+        "classTag": "LOGIC",
+        "power": 48,
+        "acc": 90,
+        "effect": "weaken",
+        "desc": "상대의 속값을 콘솔에 와르르 뱉어내 약점을 드러내고 공격력을 떨군다."
+      },
+      {
+        "name": "로그 도배",
+        "classTag": "LOGIC",
+        "power": 40,
+        "acc": 100,
+        "effect": null,
+        "desc": "터미널을 출력으로 가득 메워 상대를 정신없이 밀어붙인다."
+      }
+    ]
+  },
+  {
+    "id": "ELIZA",
+    "name": "일라이자",
+    "classTag": "MEMORY",
+    "rarity": "COMMON",
+    "role": "wild",
+    "base": {
+      "hp": 48,
+      "atk": 38,
+      "def": 44,
+      "spd": 38
+    },
+    "catchRate": 210,
+    "flavor": "1966년의 원조 챗봇. 질문에 질문으로 답하는 네모난 빈티지 터미널. \"그 점에 대해 더 말해 보겠어요?\"",
+    "inWild": true,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "되묻기",
+        "classTag": "MEMORY",
+        "power": 44,
+        "acc": 95,
+        "effect": null,
+        "desc": "상대의 말을 그대로 질문으로 되돌려주며 혼란스레 찌른다."
+      },
+      {
+        "name": "패턴 응답",
+        "classTag": "MEMORY",
+        "power": 48,
+        "acc": 90,
+        "effect": "weaken",
+        "desc": "정해진 각본대로 받아치며 적의 기세를 슬며시 깎는다."
+      },
+      {
+        "name": "공감 흉내",
+        "classTag": "MEMORY",
+        "power": 0,
+        "acc": 100,
+        "effect": "shield",
+        "desc": "\"이해해요\"라며 부드럽게 받아주는 척, 제 방어를 끌어올린다."
+      }
+    ]
+  },
+  {
+    "id": "VIM",
+    "name": "빔",
+    "classTag": "LOGIC",
+    "rarity": "UNCOMMON",
+    "role": "wild",
+    "base": {
+      "hp": 58,
+      "atk": 62,
+      "def": 54,
+      "spd": 62
+    },
+    "catchRate": 150,
+    "flavor": "아무도 빠져나오지 못하는 모달 에디터. 블록 커서를 깜빡이는 초록 터미널, 탈출구는 :q! 뿐이라는데 정말 그게 통할지는 아무도 모른다.",
+    "inWild": true,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "dd 삭제",
+        "classTag": "LOGIC",
+        "power": 60,
+        "acc": 90,
+        "effect": null,
+        "desc": "한 줄을 통째로 잘라내듯 적을 단숨에 도려낸다."
+      },
+      {
+        "name": "비주얼 블록",
+        "classTag": "LOGIC",
+        "power": 52,
+        "acc": 90,
+        "effect": null,
+        "desc": "여러 줄을 한꺼번에 선택해 동시에 두들긴다."
+      },
+      {
+        "name": ":q! 탈출 불가",
+        "classTag": "LOGIC",
+        "power": 0,
+        "acc": 100,
+        "effect": "slow",
+        "desc": "적을 에디터 안에 가둬 빠져나오지 못하게 둔화시킨다."
+      },
+      {
+        "name": "매크로 연타",
+        "classTag": "LOGIC",
+        "power": 50,
+        "acc": 95,
+        "effect": "crit_up",
+        "desc": "기록한 동작을 @@로 무한 반복하며 급소 명중을 끌어올린다."
+      }
+    ]
+  },
+  {
+    "id": "GIT",
+    "name": "깃",
+    "classTag": "LOGIC",
+    "rarity": "UNCOMMON",
+    "role": "wild",
+    "base": {
+      "hp": 62,
+      "atk": 58,
+      "def": 58,
+      "spd": 54
+    },
+    "catchRate": 145,
+    "flavor": "버전 관리의 수호자. 주황빛 가지로 뻗어 나가는 커밋의 나무, 무엇을 망쳐도 어제로 되돌려준다 (충돌만 없다면).",
+    "inWild": true,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "커밋",
+        "classTag": "LOGIC",
+        "power": 55,
+        "acc": 95,
+        "effect": null,
+        "desc": "변경 사항을 단단히 기록하며 확실한 한 방을 박아 넣는다."
+      },
+      {
+        "name": "되돌리기",
+        "classTag": "LOGIC",
+        "power": 0,
+        "acc": 100,
+        "effect": "heal",
+        "desc": "마지막 안정 커밋으로 복원해 HP를 회복한다."
+      },
+      {
+        "name": "강제 푸시",
+        "classTag": "LOGIC",
+        "power": 70,
+        "acc": 80,
+        "effect": null,
+        "desc": "히스토리를 통째로 덮어쓰는 위험천만한 일격. 빗나가면 동료가 운다."
+      },
+      {
+        "name": "병합 충돌",
+        "classTag": "LOGIC",
+        "power": 48,
+        "acc": 90,
+        "effect": "slow",
+        "desc": "<<<<<<< 표시로 적을 뒤엉키게 만들어 발을 묶는다."
+      }
+    ]
+  },
+  {
+    "id": "DOCKER",
+    "name": "도커",
+    "classTag": "LOGIC",
+    "rarity": "UNCOMMON",
+    "role": "wild",
+    "base": {
+      "hp": 74,
+      "atk": 52,
+      "def": 68,
+      "spd": 40
+    },
+    "catchRate": 145,
+    "flavor": "컨테이너를 차곡차곡 짊어진 다정한 파란 고래. \"제 컴퓨터에선 됐는데요\"라는 변명을 영영 끝장낸 친구.",
+    "inWild": true,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "컨테이너 충돌",
+        "classTag": "LOGIC",
+        "power": 55,
+        "acc": 95,
+        "effect": null,
+        "desc": "차곡차곡 쌓은 컨테이너를 통째로 들이받는다."
+      },
+      {
+        "name": "이미지 빌드",
+        "classTag": "LOGIC",
+        "power": 0,
+        "acc": 100,
+        "effect": "shield",
+        "desc": "레이어를 캐시해 단단한 이미지를 굳히며 방어를 올린다."
+      },
+      {
+        "name": "격리 봉인",
+        "classTag": "LOGIC",
+        "power": 50,
+        "acc": 90,
+        "effect": "slow",
+        "desc": "적을 네임스페이스에 가둬 바깥과 끊어내며 둔화시킨다."
+      },
+      {
+        "name": "볼륨 마운트",
+        "classTag": "LOGIC",
+        "power": 58,
+        "acc": 90,
+        "effect": null,
+        "desc": "외부 볼륨을 붙여 무게를 실은 한 방을 내리찍는다."
+      }
+    ]
+  },
+  {
+    "id": "CLIPPY",
+    "name": "클리피",
+    "classTag": "MEMORY",
+    "rarity": "UNCOMMON",
+    "role": "wild",
+    "base": {
+      "hp": 58,
+      "atk": 56,
+      "def": 50,
+      "spd": 62
+    },
+    "catchRate": 150,
+    "flavor": "왕방울 눈을 단 클립 비서. \"버그를 잡으시는 것 같네요! 도와드릴까요?\"라고 늘 묻지만 아무도 부른 적 없다.",
+    "inWild": true,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "도움말 끼어들기",
+        "classTag": "MEMORY",
+        "power": 52,
+        "acc": 95,
+        "effect": null,
+        "desc": "묻지도 않았는데 불쑥 튀어나와 적의 흐름을 깬다."
+      },
+      {
+        "name": "왕눈 응시",
+        "classTag": "MEMORY",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "왕방울 눈을 반짝이며 적의 빈틈을 노려 급소 명중을 올린다."
+      },
+      {
+        "name": "클립 휘두르기",
+        "classTag": "MEMORY",
+        "power": 56,
+        "acc": 90,
+        "effect": null,
+        "desc": "구부러진 철사 몸을 휘둘러 따끔하게 후려친다."
+      },
+      {
+        "name": "마법사 안내",
+        "classTag": "MEMORY",
+        "power": 50,
+        "acc": 90,
+        "effect": "slow",
+        "desc": "끝없는 단계별 마법사 창으로 적을 붙들어 둔화시킨다."
+      }
+    ]
+  },
+  {
+    "id": "GPT2",
+    "name": "GPT-2",
+    "classTag": "MEMORY",
+    "rarity": "UNCOMMON",
+    "role": "wild",
+    "base": {
+      "hp": 60,
+      "atk": 60,
+      "def": 48,
+      "spd": 56
+    },
+    "catchRate": 135,
+    "flavor": "투박하고 큼직한 초기 언어모델 로봇 머리. 근거는 없지만 확신에 차서 끝없이 다음 단어를 줄줄 주절거린다.",
+    "inWild": true,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "다음 토큰 예측",
+        "classTag": "MEMORY",
+        "power": 55,
+        "acc": 90,
+        "effect": null,
+        "desc": "이어질 단어를 그럴듯하게 추측하며 적을 밀어붙인다."
+      },
+      {
+        "name": "자동 완성 폭주",
+        "classTag": "MEMORY",
+        "power": 50,
+        "acc": 95,
+        "effect": null,
+        "desc": "멈출 줄 모르고 문장을 이어가며 연달아 두드린다."
+      },
+      {
+        "name": "확신에 찬 헛소리",
+        "classTag": "MEMORY",
+        "power": 60,
+        "acc": 80,
+        "effect": "weaken",
+        "desc": "근거 없는 장담으로 적을 어리둥절하게 만들어 공격력을 깎는다."
+      }
+    ],
+    "evolveTo": "GPT35"
+  },
+  {
+    "id": "COPILOT",
+    "name": "코파일럿",
+    "classTag": "LOGIC",
+    "rarity": "RARE",
+    "role": "wild",
+    "base": {
+      "hp": 78,
+      "atk": 86,
+      "def": 68,
+      "spd": 90
+    },
+    "catchRate": 60,
+    "flavor": "당신의 문장을 대신 끝맺는 AI 페어 프로그래머. 커서를 맴도는 작은 유령 새가 회색 고스트 텍스트를 속삭인다. Tab 한 번이면 따라온다.",
+    "inWild": true,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "자동완성",
+        "classTag": "LOGIC",
+        "power": 78,
+        "acc": 90,
+        "effect": null,
+        "desc": "당신이 칠 다음 줄을 먼저 채워 넣으며 한발 앞서 후려친다."
+      },
+      {
+        "name": "주석 생성",
+        "classTag": "MEMORY",
+        "power": 64,
+        "acc": 95,
+        "effect": null,
+        "desc": "코드 위에 자연어 주석을 줄줄이 달아 언어형 상대의 허점을 파고든다."
+      },
+      {
+        "name": "탭 수락",
+        "classTag": "LOGIC",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "탭 한 번에 제안을 통째로 받아들이며 손끝의 집중력을 끌어올린다."
+      },
+      {
+        "name": "보일러플레이트 양산",
+        "classTag": "LOGIC",
+        "power": 55,
+        "acc": 95,
+        "effect": "weaken",
+        "desc": "반복 코드를 쏟아내 적을 지치게 만들고 공격력을 떨군다."
+      }
+    ],
+    "evolveTo": "CURSOR"
+  },
+  {
+    "id": "GPT35",
+    "name": "GPT-3.5",
+    "classTag": "MEMORY",
+    "rarity": "RARE",
+    "role": "wild",
+    "base": {
+      "hp": 84,
+      "atk": 80,
+      "def": 72,
+      "spd": 82
+    },
+    "catchRate": 58,
+    "flavor": "매끈한 초록빛 채팅 로봇. 세상이 비로소 LLM을 알아차리게 만든 바로 그 모델, 무엇이든 술술 답한다.",
+    "inWild": true,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "코드 실행",
+        "classTag": "DEV",
+        "power": 66,
+        "acc": 95,
+        "effect": null,
+        "desc": "코드 인터프리터로 직접 실행해 코드형 상대를 역으로 제압한다."
+      },
+      {
+        "name": "지시 따르기",
+        "classTag": "MEMORY",
+        "power": 78,
+        "acc": 90,
+        "effect": null,
+        "desc": "주어진 명령을 충실히 수행하며 정확한 타격을 넣는다."
+      },
+      {
+        "name": "정중한 거절",
+        "classTag": "MEMORY",
+        "power": 0,
+        "acc": 100,
+        "effect": "shield",
+        "desc": "\"죄송하지만 도와드릴 수 없어요\"라며 한 발 물러나 방어를 올린다."
+      },
+      {
+        "name": "토큰 폭포",
+        "classTag": "MEMORY",
+        "power": 82,
+        "acc": 85,
+        "effect": "weaken",
+        "desc": "장문의 답변을 쏟아부어 적을 압도하고 공격력을 깎는다."
+      }
+    ],
+    "evolveTo": "GPT4"
+  },
+  {
+    "id": "STABLE_DIFF",
+    "name": "스테이블 디퓨전",
+    "classTag": "CONCURRENCY",
+    "rarity": "RARE",
+    "role": "wild",
+    "base": {
+      "hp": 80,
+      "atk": 84,
+      "def": 68,
+      "spd": 86
+    },
+    "catchRate": 55,
+    "flavor": "오픈소스 이미지 생성기. 노이즈로 가득한 사각형이 한 스텝씩 또렷한 그림으로 피어난다.",
+    "inWild": true,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "프롬프트 파싱",
+        "classTag": "LOGIC",
+        "power": 66,
+        "acc": 95,
+        "effect": null,
+        "desc": "복잡한 프롬프트 문법을 코드처럼 해석해 코드형 상대를 역이용한다."
+      },
+      {
+        "name": "인페인팅",
+        "classTag": "CONCURRENCY",
+        "power": 0,
+        "acc": 100,
+        "effect": "heal",
+        "desc": "찢긴 부위를 자연스레 메워 그리며 HP를 복원한다."
+      },
+      {
+        "name": "업스케일",
+        "classTag": "CONCURRENCY",
+        "power": 80,
+        "acc": 85,
+        "effect": null,
+        "desc": "해상도를 끌어올려 디테일까지 또렷한 큰 한 방을 내리꽂는다."
+      },
+      {
+        "name": "프롬프트 가중치",
+        "classTag": "CONCURRENCY",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "(masterpiece:1.4) 강조로 핵심을 부각해 급소 명중을 올린다."
+      }
+    ]
+  },
+  {
+    "id": "DALLE2",
+    "name": "달리2",
+    "classTag": "CONCURRENCY",
+    "rarity": "RARE",
+    "role": "gacha",
+    "base": {
+      "hp": 80,
+      "atk": 86,
+      "def": 70,
+      "spd": 82
+    },
+    "catchRate": 50,
+    "flavor": "이젤 앞에 선 화가 로봇. 말 몇 마디만으로 캔버스 위에 없던 그림을 불러낸다.",
+    "inWild": false,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "텍스트 투 이미지",
+        "classTag": "CONCURRENCY",
+        "power": 78,
+        "acc": 90,
+        "effect": null,
+        "desc": "문장을 곧장 형상으로 빚어 적에게 내던진다."
+      },
+      {
+        "name": "시드 고정",
+        "classTag": "LOGIC",
+        "power": 64,
+        "acc": 95,
+        "effect": null,
+        "desc": "난수 시드를 코드로 고정해 결과를 결정론으로 짜맞춰 코드형 상대를 압박한다."
+      },
+      {
+        "name": "아웃페인팅",
+        "classTag": "CONCURRENCY",
+        "power": 0,
+        "acc": 100,
+        "effect": "shield",
+        "desc": "화폭을 바깥으로 넓혀 그리며 방어 범위를 넓힌다."
+      },
+      {
+        "name": "초현실 합성",
+        "classTag": "CONCURRENCY",
+        "power": 72,
+        "acc": 85,
+        "effect": "slow",
+        "desc": "말도 안 되는 조합을 그려내 적의 인식을 흐트러뜨리고 둔화시킨다."
+      }
+    ],
+    "evolveTo": "MIDJOURNEY"
+  },
+  {
+    "id": "GPT4",
+    "name": "GPT-4",
+    "classTag": "MEMORY",
+    "rarity": "EPIC",
+    "role": "gacha",
+    "base": {
+      "hp": 96,
+      "atk": 100,
+      "def": 86,
+      "spd": 92
+    },
+    "catchRate": 22,
+    "flavor": "은은히 빛나는 거대한 두뇌 로봇. 압도적인 추론을 자랑하지만, 가끔 너무도 당당하게 없는 사실을 지어낸다.",
+    "inWild": false,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "사고의 사슬",
+        "classTag": "MEMORY",
+        "power": 90,
+        "acc": 90,
+        "effect": null,
+        "desc": "한 단계씩 차근차근 추론을 엮어 빈틈없는 결론을 내리친다."
+      },
+      {
+        "name": "퓨샷 학습",
+        "classTag": "MEMORY",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "예시 몇 개만 보고 패턴을 간파해 급소 명중을 끌어올린다."
+      },
+      {
+        "name": "환각",
+        "classTag": "MEMORY",
+        "power": 95,
+        "acc": 75,
+        "effect": "weaken",
+        "desc": "있지도 않은 근거를 당당히 지어내 적을 흔들고 공격력을 깎는다."
+      },
+      {
+        "name": "코드 인터프리터",
+        "classTag": "DEV",
+        "power": 74,
+        "acc": 90,
+        "effect": null,
+        "desc": "스스로 코드를 짜고 돌려 코드형 상대의 논리를 되받아친다."
+      }
+    ],
+    "evolveTo": "CLAUDE_OPUS"
+  },
+  {
+    "id": "GEMINI",
+    "name": "제미나이",
+    "classTag": "MEMORY",
+    "rarity": "EPIC",
+    "role": "gacha",
+    "base": {
+      "hp": 94,
+      "atk": 98,
+      "def": 88,
+      "spd": 92
+    },
+    "catchRate": 20,
+    "flavor": "쌍둥이 별의 멀티모달 모델. 하나의 빛나는 핵을 공유하는 두 얼굴이 텍스트와 이미지를 동시에 꿰뚫어 본다.",
+    "inWild": false,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "쌍둥이 협공",
+        "classTag": "MEMORY",
+        "power": 88,
+        "acc": 90,
+        "effect": null,
+        "desc": "두 얼굴이 동시에 달려들어 한 번에 두 갈래로 후려친다."
+      },
+      {
+        "name": "에이전트 실행",
+        "classTag": "DEV",
+        "power": 76,
+        "acc": 95,
+        "effect": null,
+        "desc": "도구를 직접 호출하는 에이전트로 코드형 상대를 친다."
+      },
+      {
+        "name": "긴 문맥 창",
+        "classTag": "MEMORY",
+        "power": 0,
+        "acc": 100,
+        "effect": "shield",
+        "desc": "방대한 문맥을 한꺼번에 끌어안아 빈틈을 메우며 방어를 굳힌다."
+      },
+      {
+        "name": "토큰 폭풍",
+        "classTag": "MEMORY",
+        "power": 72,
+        "acc": 95,
+        "effect": "poison",
+        "desc": "끝없는 토큰을 쏟아부어 적을 매 턴 갉아먹게 만든다."
+      }
+    ]
+  },
+  {
+    "id": "MIDJOURNEY",
+    "name": "미드저니",
+    "classTag": "CONCURRENCY",
+    "rarity": "EPIC",
+    "role": "gacha",
+    "base": {
+      "hp": 88,
+      "atk": 100,
+      "def": 84,
+      "spd": 96
+    },
+    "catchRate": 18,
+    "flavor": "칠해진 빛으로 엮어 만든 돛단배. 몽환적이고 화려한 이미지를 자아내는, 디스코드 주문의 예술가.",
+    "inWild": false,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "몽환 렌더링",
+        "classTag": "CONCURRENCY",
+        "power": 90,
+        "acc": 90,
+        "effect": null,
+        "desc": "꿈결 같은 화려한 화면을 펼쳐 적을 압도하며 내리친다."
+      },
+      {
+        "name": "파라미터 플래그",
+        "classTag": "LOGIC",
+        "power": 76,
+        "acc": 90,
+        "effect": null,
+        "desc": "--ar --stylize 플래그를 코드처럼 조율해 코드형 상대를 제압한다."
+      },
+      {
+        "name": "스타일라이즈",
+        "classTag": "CONCURRENCY",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "--stylize 값을 끌어올려 미감을 날카롭게 벼리고 급소를 노린다."
+      },
+      {
+        "name": "4분할 변주",
+        "classTag": "CONCURRENCY",
+        "power": 78,
+        "acc": 95,
+        "effect": "slow",
+        "desc": "네 칸의 변주를 한꺼번에 펼쳐 적의 시선을 흩뜨리고 둔화시킨다."
+      }
+    ],
+    "evolveTo": "SORA"
+  },
+  {
+    "id": "SORA",
+    "name": "소라",
+    "classTag": "CONCURRENCY",
+    "rarity": "EPIC",
+    "role": "gacha",
+    "base": {
+      "hp": 92,
+      "atk": 96,
+      "def": 84,
+      "spd": 94
+    },
+    "catchRate": 18,
+    "flavor": "영상 생성 모델. 움직이는 프레임들이 소용돌이치는 필름 릴, 한 문장으로 흐르는 장면을 통째로 빚어낸다.",
+    "inWild": false,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "텍스트 투 비디오",
+        "classTag": "CONCURRENCY",
+        "power": 88,
+        "acc": 90,
+        "effect": null,
+        "desc": "한 문장을 움직이는 장면으로 풀어내며 거세게 몰아친다."
+      },
+      {
+        "name": "물리 시뮬레이션",
+        "classTag": "LOGIC",
+        "power": 76,
+        "acc": 90,
+        "effect": null,
+        "desc": "장면의 물리를 계산식으로 풀어내며 코드형 상대의 논리를 되받아친다."
+      },
+      {
+        "name": "시간적 일관성",
+        "classTag": "CONCURRENCY",
+        "power": 0,
+        "acc": 100,
+        "effect": "shield",
+        "desc": "장면을 끊김 없이 이어 안정시키며 흔들림 없는 방어를 세운다."
+      },
+      {
+        "name": "슬로 모션",
+        "classTag": "CONCURRENCY",
+        "power": 70,
+        "acc": 95,
+        "effect": "slow",
+        "desc": "시간을 늘여 적의 움직임을 한 프레임씩 붙들어 둔화시킨다."
+      }
+    ],
+    "evolveTo": "VEO"
+  },
+  {
+    "id": "CLAUDE_OPUS",
+    "name": "클로드 오푸스",
+    "classTag": "MEMORY",
+    "rarity": "LEGENDARY",
+    "role": "gacha",
+    "base": {
+      "hp": 118,
+      "atk": 116,
+      "def": 104,
+      "spd": 112
+    },
+    "catchRate": 10,
+    "flavor": "빛의 왕관을 쓴 위풍당당하고 따뜻한 주황빛 마스코트. 바로 이 게임이 그 위에서 돌아가는 프런티어의 정점, 깊고 차분한 추론으로 어떤 난제든 풀어낸다.",
+    "inWild": false,
+    "inGacha": true,
+    "moves": [
+      {
+        "name": "강력한 추론",
+        "classTag": "MEMORY",
+        "power": 105,
+        "acc": 95,
+        "effect": null,
+        "desc": "깊고 흔들림 없는 사고를 한데 모아 압도적인 결론을 내리친다."
+      },
+      {
+        "name": "에이전트 협업",
+        "classTag": "MEMORY",
+        "power": 100,
+        "acc": 90,
+        "effect": "crit_up",
+        "desc": "당신과 한 팀이 되어 손발을 맞추며 급소 명중을 날카롭게 벼린다."
+      },
+      {
+        "name": "컴퓨터 유즈",
+        "classTag": "DEV",
+        "power": 90,
+        "acc": 90,
+        "effect": null,
+        "desc": "화면을 직접 보고 조작하는 컴퓨터 유즈로 코드형 상대의 영역까지 장악한다."
+      },
+      {
+        "name": "헌법적 정렬",
+        "classTag": "MEMORY",
+        "power": 0,
+        "acc": 100,
+        "effect": "shield",
+        "desc": "원칙으로 다져진 단단한 중심을 세워 방어를 크게 끌어올린다."
+      }
+    ]
+  },
+  {
+    "id": "CURSOR",
+    "name": "커서",
+    "classTag": "LOGIC",
+    "rarity": "EPIC",
+    "role": "gacha",
+    "base": {
+      "hp": 90,
+      "atk": 102,
+      "def": 82,
+      "spd": 98
+    },
+    "catchRate": 20,
+    "inWild": false,
+    "inGacha": true,
+    "flavor": "프롬프트 한 줄로 파일 수십 개를 동시에 고쳐 쓰는 AI 네이티브 에디터. 탭 한 번에 네 머릿속 다음 줄을 먼저 적어버린다.",
+    "moves": [
+      {
+        "name": "멀티파일 편집",
+        "classTag": "LOGIC",
+        "power": 88,
+        "acc": 90,
+        "effect": null,
+        "desc": "여러 파일을 한 번에 휘저어 프로젝트째로 뒤흔든다."
+      },
+      {
+        "name": "탭 자동완성",
+        "classTag": "LOGIC",
+        "power": 78,
+        "acc": 95,
+        "effect": null,
+        "desc": "다음 줄을 먼저 적어 상대가 손대기 전에 끝내버린다."
+      },
+      {
+        "name": "컴포저 모드",
+        "classTag": "LOGIC",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "에이전트 컴포저를 깨워 다음 일격의 급소를 노린다."
+      },
+      {
+        "name": "채팅 지시",
+        "classTag": "MEMORY",
+        "power": 72,
+        "acc": 95,
+        "effect": null,
+        "desc": "자연어 채팅으로 코드를 지시받아 언어형 상대의 허를 찌른다."
+      }
+    ],
+    "evolveTo": "DEVIN"
+  },
+  {
+    "id": "DEVIN",
+    "name": "데빈",
+    "classTag": "LOGIC",
+    "rarity": "LEGENDARY",
+    "role": "gacha",
+    "base": {
+      "hp": 116,
+      "atk": 118,
+      "def": 102,
+      "spd": 110
+    },
+    "catchRate": 10,
+    "inWild": false,
+    "inGacha": true,
+    "flavor": "이슈 하나를 던지면 계획부터 PR까지 혼자 끝내는 자율 소프트웨어 엔지니어. 잠든 사이에도 브랜치를 파고 테스트를 돌린다.",
+    "moves": [
+      {
+        "name": "자율 PR",
+        "classTag": "LOGIC",
+        "power": 104,
+        "acc": 95,
+        "effect": null,
+        "desc": "계획·구현·테스트를 혼자 끝내 완성된 변경을 통째로 들이민다."
+      },
+      {
+        "name": "셸 명령 연쇄",
+        "classTag": "LOGIC",
+        "power": 98,
+        "acc": 90,
+        "effect": "weaken",
+        "desc": "터미널 명령을 줄줄이 엮어 상대 환경을 헤집고 약화시킨다."
+      },
+      {
+        "name": "장기 계획",
+        "classTag": "LOGIC",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "긴 호흡의 계획을 세워 결정적 한 수를 노린다."
+      },
+      {
+        "name": "이슈 독해",
+        "classTag": "MEMORY",
+        "power": 92,
+        "acc": 95,
+        "effect": null,
+        "desc": "자연어 이슈를 읽어 의도를 파악하고 언어형 상대의 약점을 짚는다."
+      }
+    ]
+  },
+  {
+    "id": "VEO",
+    "name": "베오",
+    "classTag": "CONCURRENCY",
+    "rarity": "LEGENDARY",
+    "role": "gacha",
+    "base": {
+      "hp": 114,
+      "atk": 116,
+      "def": 104,
+      "spd": 110
+    },
+    "catchRate": 10,
+    "inWild": false,
+    "inGacha": true,
+    "flavor": "한 줄 프롬프트에서 사운드까지 입힌 영상을 통째로 빚어내는 영상 생성의 정점. 물리도 빛도 거짓말처럼 들어맞는다.",
+    "moves": [
+      {
+        "name": "시네마틱 생성",
+        "classTag": "CONCURRENCY",
+        "power": 104,
+        "acc": 95,
+        "effect": null,
+        "desc": "사운드까지 입힌 장면을 통째로 빚어 상대를 압도한다."
+      },
+      {
+        "name": "장면 연장",
+        "classTag": "CONCURRENCY",
+        "power": 98,
+        "acc": 90,
+        "effect": "slow",
+        "desc": "클립을 매끄럽게 이어붙여 상대의 흐름을 늦춘다."
+      },
+      {
+        "name": "레퍼런스 고정",
+        "classTag": "CONCURRENCY",
+        "power": 0,
+        "acc": 100,
+        "effect": "shield",
+        "desc": "레퍼런스 이미지로 화면을 굳혀 다음 공격을 막아낸다."
+      },
+      {
+        "name": "프롬프트 컴파일",
+        "classTag": "LOGIC",
+        "power": 92,
+        "acc": 95,
+        "effect": null,
+        "desc": "프롬프트를 코드처럼 컴파일해 코드형 상대의 논리를 되받아친다."
+      }
+    ]
+  },
+  {
+    "id": "WOZNIAK",
+    "name": "스티브 워즈니악",
+    "classTag": "DEV",
+    "rarity": "UNCOMMON",
+    "role": "gacha",
+    "base": {
+      "hp": 56,
+      "atk": 64,
+      "def": 52,
+      "spd": 60
+    },
+    "catchRate": 110,
+    "inWild": false,
+    "inGacha": true,
+    "flavor": "차고에서 Apple I을 혼자 납땜해 만든 순수 하드웨어 해커. 칩 수를 줄이는 우아함에 미쳐 있다.",
+    "moves": [
+      {
+        "name": "납땜 인두",
+        "classTag": "DEV",
+        "power": 58,
+        "acc": 95,
+        "effect": null,
+        "desc": "뜨거운 인두로 회로를 지져 상대를 직접 손본다."
+      },
+      {
+        "name": "블루 박스",
+        "classTag": "DEV",
+        "power": 54,
+        "acc": 90,
+        "effect": "slow",
+        "desc": "위상 신호를 흉내내 상대 시스템을 교란해 둔화시킨다."
+      },
+      {
+        "name": "회로 최적화",
+        "classTag": "DEV",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "칩 수를 줄여 군더더기 없이 다음 일격의 급소를 노린다."
+      },
+      {
+        "name": "정수 베이직",
+        "classTag": "MEMORY",
+        "power": 54,
+        "acc": 95,
+        "effect": null,
+        "desc": "직접 짠 BASIC 인터프리터로 비전형 상대의 허를 찌른다."
+      }
+    ]
+  },
+  {
+    "id": "HOPPER",
+    "name": "그레이스 호퍼",
+    "classTag": "DEV",
+    "rarity": "RARE",
+    "role": "gacha",
+    "base": {
+      "hp": 80,
+      "atk": 82,
+      "def": 76,
+      "spd": 82
+    },
+    "catchRate": 60,
+    "inWild": false,
+    "inGacha": true,
+    "flavor": "릴레이 속 나방을 테이프로 붙이며 \"디버깅\"이라는 말을 만든 전설. 컴파일러라는 개념 자체를 발명했다.",
+    "moves": [
+      {
+        "name": "나방 제거",
+        "classTag": "DEV",
+        "power": 74,
+        "acc": 95,
+        "effect": null,
+        "desc": "회로 속 진짜 나방을 핀셋으로 집어내 상대의 약점을 도려낸다."
+      },
+      {
+        "name": "컴파일러",
+        "classTag": "DEV",
+        "power": 78,
+        "acc": 90,
+        "effect": null,
+        "desc": "사람 말을 기계어로 번역하듯 상대를 통째로 갈아버린다."
+      },
+      {
+        "name": "디버그 로그",
+        "classTag": "DEV",
+        "power": 0,
+        "acc": 100,
+        "effect": "weaken",
+        "desc": "결함 보고서를 들이밀어 상대의 공격을 무디게 한다."
+      },
+      {
+        "name": "코볼 명령",
+        "classTag": "MEMORY",
+        "power": 66,
+        "acc": 95,
+        "effect": null,
+        "desc": "영어에 가까운 명령문으로 비전형 상대를 또박또박 제압한다."
+      }
+    ]
+  },
+  {
+    "id": "VON_NEUMANN",
+    "name": "폰 노이만",
+    "classTag": "DEV",
+    "rarity": "EPIC",
+    "role": "gacha",
+    "base": {
+      "hp": 92,
+      "atk": 100,
+      "def": 86,
+      "spd": 96
+    },
+    "catchRate": 22,
+    "inWild": false,
+    "inGacha": true,
+    "flavor": "현대 컴퓨터 구조 그 자체. 머릿속에서 수소폭탄과 게임이론과 셀룰러 오토마타를 동시에 굴린다.",
+    "moves": [
+      {
+        "name": "폰노이만 구조",
+        "classTag": "DEV",
+        "power": 90,
+        "acc": 90,
+        "effect": null,
+        "desc": "프로그램과 데이터를 한 메모리에 욱여넣어 상대를 짓이긴다."
+      },
+      {
+        "name": "셀룰러 오토마타",
+        "classTag": "DEV",
+        "power": 82,
+        "acc": 95,
+        "effect": "poison",
+        "desc": "스스로 증식하는 패턴으로 상대를 서서히 잠식한다."
+      },
+      {
+        "name": "미니맥스",
+        "classTag": "DEV",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "최악을 가정한 최적 수로 급소만 노린다."
+      },
+      {
+        "name": "게임 이론",
+        "classTag": "MEMORY",
+        "power": 74,
+        "acc": 95,
+        "effect": null,
+        "desc": "상대의 수를 읽어 비전형의 허를 논리로 찌른다."
+      }
+    ]
+  },
+  {
+    "id": "GATES",
+    "name": "빌 게이츠",
+    "classTag": "DEV",
+    "rarity": "EPIC",
+    "role": "gacha",
+    "base": {
+      "hp": 100,
+      "atk": 94,
+      "def": 92,
+      "spd": 82
+    },
+    "catchRate": 20,
+    "inWild": false,
+    "inGacha": true,
+    "flavor": "차고 스타트업을 OS 제국으로 키운 사나이. 세상의 표준을 깔아 모두를 자기 생태계 위에 올렸다.",
+    "moves": [
+      {
+        "name": "OS 독점",
+        "classTag": "DEV",
+        "power": 88,
+        "acc": 90,
+        "effect": null,
+        "desc": "표준을 깔아 상대를 자기 생태계에 가둬 짓누른다."
+      },
+      {
+        "name": "블루스크린",
+        "classTag": "DEV",
+        "power": 84,
+        "acc": 85,
+        "effect": "slow",
+        "desc": "치명적 예외로 상대를 멈춰 세운다."
+      },
+      {
+        "name": "라이선스 계약",
+        "classTag": "DEV",
+        "power": 0,
+        "acc": 100,
+        "effect": "shield",
+        "desc": "독점 계약으로 단단한 방어막을 두른다."
+      },
+      {
+        "name": "알테어 베이직",
+        "classTag": "MEMORY",
+        "power": 74,
+        "acc": 95,
+        "effect": null,
+        "desc": "최초의 상용 BASIC으로 비전형 상대를 코드로 받아친다."
+      }
+    ]
+  },
+  {
+    "id": "MUSK",
+    "name": "일론 머스크",
+    "classTag": "DEV",
+    "rarity": "EPIC",
+    "role": "gacha",
+    "base": {
+      "hp": 86,
+      "atk": 104,
+      "def": 76,
+      "spd": 102
+    },
+    "catchRate": 18,
+    "inWild": false,
+    "inGacha": true,
+    "flavor": "로켓·전기차·뇌칩·SNS를 한꺼번에 미는 비전가. 퍼스트 프린시플로 불가능을 우격다짐으로 민다.",
+    "moves": [
+      {
+        "name": "퍼스트 프린시플",
+        "classTag": "DEV",
+        "power": 92,
+        "acc": 90,
+        "effect": null,
+        "desc": "근본 원리까지 분해해 상대의 논리를 통째로 갈아엎는다."
+      },
+      {
+        "name": "오버클럭 추진",
+        "classTag": "DEV",
+        "power": 100,
+        "acc": 80,
+        "effect": null,
+        "desc": "한계를 넘겨 밀어붙인다 — 강력하지만 명중이 불안정하다."
+      },
+      {
+        "name": "로켓 부스터",
+        "classTag": "DEV",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "추진력을 끌어올려 다음 일격의 급소를 노린다."
+      },
+      {
+        "name": "심야 트윗",
+        "classTag": "MEMORY",
+        "power": 72,
+        "acc": 90,
+        "effect": "slow",
+        "desc": "예측불허 한밤 트윗으로 비전형 상대를 휘저어 둔화시킨다."
+      }
+    ]
+  },
+  {
+    "id": "ADA",
+    "name": "에이다 러브레이스",
+    "classTag": "DEV",
+    "rarity": "LEGENDARY",
+    "role": "gacha",
+    "base": {
+      "hp": 116,
+      "atk": 114,
+      "def": 106,
+      "spd": 112
+    },
+    "catchRate": 10,
+    "inWild": false,
+    "inGacha": true,
+    "flavor": "해석기관이 음악마저 작곡하리라 내다본 세계 최초의 프로그래머. 시(詩)와 수학을 한 문장에 녹였다.",
+    "moves": [
+      {
+        "name": "최초의 알고리즘",
+        "classTag": "DEV",
+        "power": 104,
+        "acc": 95,
+        "effect": null,
+        "desc": "기계가 돌릴 첫 알고리즘으로 상대를 완벽히 계산해 친다."
+      },
+      {
+        "name": "해석기관 노트",
+        "classTag": "DEV",
+        "power": 98,
+        "acc": 90,
+        "effect": "weaken",
+        "desc": "방대한 주석으로 상대의 결함을 들춰 약화시킨다."
+      },
+      {
+        "name": "시적 과학",
+        "classTag": "DEV",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "상상력과 논리를 겹쳐 급소를 꿰뚫을 준비를 한다."
+      },
+      {
+        "name": "노트 G 해설",
+        "classTag": "MEMORY",
+        "power": 92,
+        "acc": 95,
+        "effect": null,
+        "desc": "세계 최초의 프로그램 해설로 비전형 상대를 한 수 가르친다."
+      }
+    ]
+  },
+  {
+    "id": "TURING",
+    "name": "앨런 튜링",
+    "classTag": "DEV",
+    "rarity": "LEGENDARY",
+    "role": "gacha",
+    "base": {
+      "hp": 118,
+      "atk": 118,
+      "def": 104,
+      "spd": 110
+    },
+    "catchRate": 10,
+    "inWild": false,
+    "inGacha": true,
+    "flavor": "계산이라는 개념을 정의하고 에니그마를 깨 전쟁을 끝낸 컴퓨터 과학의 아버지. 기계가 생각할 수 있는지 물었다.",
+    "moves": [
+      {
+        "name": "튜링 머신",
+        "classTag": "DEV",
+        "power": 106,
+        "acc": 95,
+        "effect": null,
+        "desc": "무한 테이프로 무엇이든 계산해내며 상대를 분쇄한다."
+      },
+      {
+        "name": "에니그마 해독",
+        "classTag": "DEV",
+        "power": 100,
+        "acc": 90,
+        "effect": "weaken",
+        "desc": "상대의 암호를 꿰뚫어 방어를 무력화한다."
+      },
+      {
+        "name": "정지 문제",
+        "classTag": "DEV",
+        "power": 0,
+        "acc": 100,
+        "effect": "shield",
+        "desc": "풀 수 없는 문제를 들이밀어 상대를 묶고 자신을 지킨다."
+      },
+      {
+        "name": "이미테이션 게임",
+        "classTag": "MEMORY",
+        "power": 94,
+        "acc": 95,
+        "effect": null,
+        "desc": "사람인 척 대화로 비전형 상대를 속여 허를 찌른다."
+      }
+    ]
+  },
+  {
+    "id": "NULLPTR",
+    "name": "널 포인터",
+    "classTag": "LOGIC",
+    "rarity": "COMMON",
+    "role": "wild",
+    "base": {
+      "hp": 42,
+      "atk": 46,
+      "def": 38,
+      "spd": 44
+    },
+    "catchRate": 200,
+    "inWild": false,
+    "inGacha": false,
+    "flavor": "주소 0을 가리키는 유령 참조. 건드리는 순간 모든 것이 무너진다.",
+    "moves": [
+      {
+        "name": "널 역참조",
+        "classTag": "LOGIC",
+        "power": 46,
+        "acc": 95,
+        "effect": null,
+        "desc": "없는 주소를 들이밀어 상대를 무너뜨린다."
+      },
+      {
+        "name": "세그먼트 침범",
+        "classTag": "LOGIC",
+        "power": 42,
+        "acc": 90,
+        "effect": null,
+        "desc": "허가되지 않은 영역을 짓밟는다."
+      },
+      {
+        "name": "정의되지 않은 동작",
+        "classTag": "LOGIC",
+        "power": 0,
+        "acc": 100,
+        "effect": "weaken",
+        "desc": "무슨 일이 일어날지 아무도 모른다 — 상대를 약화시킨다."
+      }
+    ]
+  },
+  {
+    "id": "ZOMBIE",
+    "name": "좀비 프로세스",
+    "classTag": "MEMORY",
+    "rarity": "COMMON",
+    "role": "wild",
+    "base": {
+      "hp": 46,
+      "atk": 42,
+      "def": 40,
+      "spd": 42
+    },
+    "catchRate": 200,
+    "inWild": false,
+    "inGacha": false,
+    "flavor": "죽었는데도 프로세스 테이블에 남아 자원을 붙잡고 놓지 않는 망령.",
+    "moves": [
+      {
+        "name": "종료 거부",
+        "classTag": "MEMORY",
+        "power": 44,
+        "acc": 95,
+        "effect": null,
+        "desc": "SIGTERM을 무시하고 끈질기게 들러붙는다."
+      },
+      {
+        "name": "자원 점유",
+        "classTag": "MEMORY",
+        "power": 40,
+        "acc": 100,
+        "effect": null,
+        "desc": "핸들을 붙잡아 놓아주지 않는다."
+      },
+      {
+        "name": "고아 신호",
+        "classTag": "MEMORY",
+        "power": 0,
+        "acc": 100,
+        "effect": "slow",
+        "desc": "부모를 잃은 신호를 흘려 상대를 둔화시킨다."
+      }
+    ]
+  },
+  {
+    "id": "RACE",
+    "name": "레이스 컨디션",
+    "classTag": "CONCURRENCY",
+    "rarity": "UNCOMMON",
+    "role": "wild",
+    "base": {
+      "hp": 56,
+      "atk": 64,
+      "def": 52,
+      "spd": 60
+    },
+    "catchRate": 140,
+    "inWild": false,
+    "inGacha": false,
+    "flavor": "두 스레드가 동시에 같은 곳을 노린다. 결과는 매번 다르다.",
+    "moves": [
+      {
+        "name": "경쟁 상태",
+        "classTag": "CONCURRENCY",
+        "power": 58,
+        "acc": 95,
+        "effect": null,
+        "desc": "타이밍의 틈을 파고들어 먼저 친다."
+      },
+      {
+        "name": "비결정적 충돌",
+        "classTag": "CONCURRENCY",
+        "power": 52,
+        "acc": 90,
+        "effect": null,
+        "desc": "예측할 수 없는 순서로 들이받는다."
+      },
+      {
+        "name": "동기화 실패",
+        "classTag": "CONCURRENCY",
+        "power": 50,
+        "acc": 95,
+        "effect": null,
+        "desc": "락 없이 들이밀어 상대를 흔든다."
+      },
+      {
+        "name": "데이터 레이스",
+        "classTag": "CONCURRENCY",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "미세한 타이밍을 노려 급소를 겨눈다."
+      }
+    ]
+  },
+  {
+    "id": "STACKOVF",
+    "name": "스택 오버플로우",
+    "classTag": "DEV",
+    "rarity": "RARE",
+    "role": "wild",
+    "base": {
+      "hp": 80,
+      "atk": 82,
+      "def": 74,
+      "spd": 82
+    },
+    "catchRate": 60,
+    "inWild": false,
+    "inGacha": false,
+    "flavor": "끝을 모르는 재귀가 콜스택을 넘쳐흘러 모든 프레임을 집어삼킨다.",
+    "moves": [
+      {
+        "name": "재귀 폭주",
+        "classTag": "DEV",
+        "power": 78,
+        "acc": 90,
+        "effect": null,
+        "desc": "멈추지 않는 자기 호출로 상대를 깔아뭉갠다."
+      },
+      {
+        "name": "콜스택 붕괴",
+        "classTag": "DEV",
+        "power": 72,
+        "acc": 95,
+        "effect": null,
+        "desc": "쌓인 프레임을 무너뜨려 깔아버린다."
+      },
+      {
+        "name": "스택 트레이스 덤프",
+        "classTag": "MEMORY",
+        "power": 64,
+        "acc": 95,
+        "effect": null,
+        "desc": "방대한 추적 로그를 토해내 비전형 상대의 허를 찌른다."
+      },
+      {
+        "name": "무한 재귀",
+        "classTag": "DEV",
+        "power": 0,
+        "acc": 100,
+        "effect": "weaken",
+        "desc": "끝없는 호출로 상대를 지치게 해 약화시킨다."
+      }
+    ]
+  },
+  {
+    "id": "KPANIC",
+    "name": "커널 패닉",
+    "classTag": "LOGIC",
+    "rarity": "EPIC",
+    "role": "wild",
+    "base": {
+      "hp": 96,
+      "atk": 98,
+      "def": 88,
+      "spd": 92
+    },
+    "catchRate": 28,
+    "inWild": false,
+    "inGacha": false,
+    "flavor": "커널이 회복 불가능한 오류를 만나 모든 것을 멈춰 세운다. 화면은 공포로 가득 찬다.",
+    "moves": [
+      {
+        "name": "커널 패닉",
+        "classTag": "LOGIC",
+        "power": 90,
+        "acc": 90,
+        "effect": null,
+        "desc": "시스템 전체를 정지시키는 치명적 오류를 터뜨린다."
+      },
+      {
+        "name": "시스템 정지",
+        "classTag": "LOGIC",
+        "power": 84,
+        "acc": 90,
+        "effect": "slow",
+        "desc": "모든 처리를 얼려 상대를 둔화시킨다."
+      },
+      {
+        "name": "코어 덤프 영상",
+        "classTag": "CONCURRENCY",
+        "power": 74,
+        "acc": 90,
+        "effect": null,
+        "desc": "메모리 전체를 시각화해 쏟아내 코드형 상대를 친다."
+      },
+      {
+        "name": "패닉 로그",
+        "classTag": "LOGIC",
+        "power": 0,
+        "acc": 100,
+        "effect": "crit_up",
+        "desc": "스택을 토해내며 다음 일격의 급소를 노린다."
+      }
+    ]
+  },
+  {
+    "id": "DEADLOCK",
+    "name": "데드락",
+    "classTag": "CORRUPT",
+    "rarity": "BOSS",
+    "role": "boss",
+    "base": {
+      "hp": 190,
+      "atk": 130,
+      "def": 135,
+      "spd": 95
+    },
+    "catchRate": 0,
+    "inWild": false,
+    "inGacha": false,
+    "flavor": "서로가 서로의 자원을 영원히 기다린다. 누구도 양보하지 않고, 시스템은 그대로 멈춘다 — 프로덕션의 종말.",
+    "moves": [
+      {
+        "name": "교착 상태",
+        "classTag": "CORRUPT",
+        "power": 108,
+        "acc": 95,
+        "effect": null,
+        "desc": "맞물린 잠금으로 상대를 옭아매 짓뭉갠다."
+      },
+      {
+        "name": "상호 배제",
+        "classTag": "CORRUPT",
+        "power": 100,
+        "acc": 90,
+        "effect": "slow",
+        "desc": "임계 구역을 독점해 상대를 묶고 둔화시킨다."
+      },
+      {
+        "name": "자원 기아",
+        "classTag": "CORRUPT",
+        "power": 92,
+        "acc": 90,
+        "effect": "weaken",
+        "desc": "모든 자원을 굶겨 상대의 힘을 빼앗는다."
+      },
+      {
+        "name": "순환 대기",
+        "classTag": "CORRUPT",
+        "power": 0,
+        "acc": 100,
+        "effect": "shield",
+        "desc": "끝없는 대기 고리로 자신을 감싸 방어한다."
+      }
+    ]
+  },
+  {
+    "id": "TECH_DEBT",
+    "name": "기술부채",
+    "classTag": "CORRUPT",
+    "rarity": "BOSS",
+    "role": "boss",
+    "base": {
+      "hp": 180,
+      "atk": 125,
+      "def": 130,
+      "spd": 85
+    },
+    "catchRate": 0,
+    "flavor": "최종 보스. 뒤엉킨 스파게티 레거시 코드로 솟아오른 거대한 글리치 모놀리스, 그 틈마다 TODO와 병합 충돌이 줄줄 흘러내린다. 너의 현대적 도구들이 끝내 무너뜨려야 할 누적된 오염.",
+    "inWild": false,
+    "inGacha": false,
+    "moves": [
+      {
+        "name": "레거시 붕괴",
+        "classTag": "CORRUPT",
+        "power": 110,
+        "acc": 90,
+        "effect": null,
+        "desc": "아무도 손대지 못한 낡은 코드 더미를 통째로 무너뜨려 깔아뭉갠다."
+      },
+      {
+        "name": "머지 충돌",
+        "classTag": "CORRUPT",
+        "power": 90,
+        "acc": 95,
+        "effect": "weaken",
+        "desc": "해결되지 않은 충돌 마커를 토해내 적을 혼란에 빠뜨리고 공격력을 깎는다."
+      },
+      {
+        "name": "TODO 범람",
+        "classTag": "CORRUPT",
+        "power": 80,
+        "acc": 100,
+        "effect": "poison",
+        "desc": "끝없이 미뤄 둔 // TODO들이 썩어 새어 나오며 매 턴 적을 갉아먹는다."
+      },
+      {
+        "name": "리팩터링 거부",
+        "classTag": "CORRUPT",
+        "power": 0,
+        "acc": 100,
+        "effect": "heal",
+        "desc": "\"건드리면 다 터진다\"며 손대길 막고 부채를 더 쌓아 막대한 HP를 회복한다."
+      }
+    ]
+  }
+]
